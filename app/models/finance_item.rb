@@ -1,0 +1,2 @@
+class FinanceItem < ApplicationRecord
+end
