@@ -10,35 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_06_210610) do
+ActiveRecord::Schema.define(version: 2021_05_07_145545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
+    t.string "name"
+    t.string "date"
+    t.integer "time"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "finance_items", force: :cascade do |t|
+    t.string "name"
+    t.integer "amount"
+    t.string "month"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "goals", force: :cascade do |t|
     t.string "name"
-    t.datetime "start_date"
-    t.datetime "completion_date"
+    t.string "start_date"
+    t.string "completion_date"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "list_items", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "trips", force: :cascade do |t|
+    t.string "name"
+    t.string "date"
+    t.string "destination"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
