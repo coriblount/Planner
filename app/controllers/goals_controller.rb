@@ -6,14 +6,14 @@ class GoalsController < ApplicationController
 end 
 
 def create
-    goal = Goal.create(goal_params)
-    render json: goal  
+goal = Goal.create(goal_params)
+render json: goal, except: [:created_at, :updated_at]
 end 
 
 
 private
 def goal_params
-    params.require(:goal).permit(:name, :start_date, :completion_date)
+    params.require(:goal).permit(:user_id, :name, :start_date, :completion_date)
 end
 
 end
