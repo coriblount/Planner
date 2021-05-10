@@ -1,12 +1,12 @@
 class GoalsController < ApplicationController
 
  def index 
-    goals = Goal.all
+    goals = Goals.all
     render json: goals
 end 
 
 def create
-goal = Goal.create(goal_params)
+goal = Goals.create(goal_params)
 render json: goal, except: [:created_at, :updated_at]
 end 
 
