@@ -9,4 +9,5 @@ resources :trips
 resources :appointments
 
 
+
 end
