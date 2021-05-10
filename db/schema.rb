@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2021_05_07_145545) do
 
   create_table "goals", force: :cascade do |t|
     t.string "name"
-    t.integer "start"
-    t.integer "completion"
+    t.string "start_date"
+    t.string "completion_date"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
