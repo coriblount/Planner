@@ -1,8 +1,7 @@
 class GoalsController < ApplicationController
-skip_before_action :verify_authenticity_token
 before_action :logged_in?
 
- def index 
+def index 
     goals = Goal.all
     render json: goals
 end 

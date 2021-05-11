@@ -1,8 +1,7 @@
 class TripsController < ApplicationController
-    skip_before_action :verify_authenticity_token
     before_action :logged_in?
 
- def index 
+def index 
     trips = Trip.all
     render json: trips
 end 
