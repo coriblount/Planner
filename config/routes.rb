@@ -8,6 +8,6 @@ resources :list_items
 resources :trips
 resources :appointments
 
-
+post '/login', to: "auth#login"
 
 end
