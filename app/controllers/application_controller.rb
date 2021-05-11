@@ -1,8 +1,16 @@
 class ApplicationController < ActionController::Base
-    skip_before_action :verify_authenticity_token
-    # before_action :logged_in?
-
     def logged_in?
-        puts 'logged_in? hit'
+        headers = request.headers['Authorization']
+        token = headers.split(" ")[1]
+        user_id = JWT.decode(token, "deez")[0]["user_id"]
+        user = User.find(user_id)
+        if user
+            user
+            # puts user.id
+        else
+            user = nil
+        end
+        render json: {error: "Please log in"} unless user
     end
+
 end
