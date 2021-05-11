@@ -1,5 +1,8 @@
 class AppointmentsController < ApplicationController
 skip_before_action :verify_authenticity_token
+before_action :logged_in?
+
+puts 'ran'
 
 def index 
     appt = Appointment.all
