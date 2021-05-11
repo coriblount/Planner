@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2021_05_07_145545) do
 
   create_table "goals", force: :cascade do |t|
     t.string "name"
-    t.string "start_date"
-    t.string "completion_date"
+    t.integer "start"
+    t.integer "completion"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -61,7 +61,8 @@ ActiveRecord::Schema.define(version: 2021_05_07_145545) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "username"
-    t.string "password"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

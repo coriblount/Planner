@@ -11,6 +11,18 @@ trip = Trip.create(trip_params)
 render json: trip, except: [:created_at, :updated_at]
 end 
 
+def update 
+    trip = Trip.find(params[:id])
+    trip.update(trip_params)
+    render json: trip
+end 
+
+def destroy
+    trip = Trip.find(params[:id])
+    trip.destroy
+end 
+
+
 
 private
 def trip_params

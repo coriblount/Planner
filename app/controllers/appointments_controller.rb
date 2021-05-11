@@ -11,6 +11,17 @@ appointment = Appointment.create(appointment_params)
 render json: appointment, except: [:created_at, :updated_at]
 end 
 
+def update 
+    appointment = Appointment.find(params[:id])
+    appointment.update(appointment_params)
+    render json: appointment
+end 
+
+def destroy
+    appointment = Appointment.find(params[:id])
+    appointment.destroy
+end 
+
 
 private
 def appointment_params
