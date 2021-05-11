@@ -3,10 +3,14 @@ class AuthController < ApplicationController
         user = User.find_by(username: auth_param[:name])
 
         if user && user.authenticate(auth_param[:password])
-            puts 'go'
+            puts 'authenticated'
             render json: {username: user.name, token: JWT.encode({user_id: user.id}, "deez")}
         else
-            render json: {error: "Incorrect username or password"}
+            render json: {
+               error: "Incorrect username or password",
+               status: 401
+            }, status: 401
+            puts 'not auth'
         end
 
     end
