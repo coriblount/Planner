@@ -13,9 +13,9 @@ FinanceItem.destroy_all
 Trip.destroy_all
 
 
-user1 = User.create(name: "Cori", username: "cori", password: "cori")
-user2 = User.create(name: "Adri", username: "adri", password: "adri")
-user3 = User.create(name: "Udenna", username:"udenna", password: "udenna")
+user1 = User.create(name: "Cori", username: "cori", email: 'cori@planner.com', password: "cori")
+user2 = User.create(name: "Adri", username: "adri", email: 'adri@planner.com', password: "adri")
+user3 = User.create(name: "Udenna", username:"udenna", email: 'udenna@planner.com', password: "udenna")
 
 goal1 = Goal.create(name:"Exercise more often", start: 1, completion: 7, user_id: user1.id)
 goal2 = Goal.create(name: "Sleep 7-9 hours every night", start: 2, completion: 7, user_id: user2.id)

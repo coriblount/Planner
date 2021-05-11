@@ -11,6 +11,17 @@ finance_item = FinanceItem.create(finance_item_params)
 render json: finance_item, except: [:created_at, :updated_at]
 end 
 
+def update 
+    finance_item = FinanceItem.find(params[:id])
+    finance_item.update(finance_item_params)
+    render json: finance_item
+end 
+
+def destroy
+    finance_item = FinanceItem.find(params[:id])
+    finance_item.destroy
+end 
+
 
 private
 def finance_item_params

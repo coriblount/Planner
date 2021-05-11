@@ -11,6 +11,17 @@ goal = Goal.create(goal_params)
 render json: goal, except: [:created_at, :updated_at]
 end 
 
+def update 
+    goal = Goal.find(params[:id])
+    goal.update(goal_params)
+    render json: goal
+end 
+
+def destroy
+    goal = Goal.find(params[:id])
+    goal.destroy
+end 
+
 
 private
 def goal_params
